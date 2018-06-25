@@ -29,7 +29,13 @@
 
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.0/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.0/firebaseui.css" />
-        <script>
+    </head>
+    <body>
+        <h1>440Kicks</h1>
+        <button id="sign-in-button">Login</button>
+        <div id="recaptcha-container"></div>
+    </body>
+    <script>
             firebase.auth().useDeviceLanguage();
             window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
             var phoneNumber = '+14402129348';
@@ -41,11 +47,5 @@
                 }).catch(function(error){
                     console.log(error);
                 })
-        </script>
-    </head>
-    <body>
-        <h1>440Kicks</h1>
-        <button id="sign-in-button">Login</button>
-        <div id="recaptcha-container"></div>
-    </body>
+    </script>
 </html>
