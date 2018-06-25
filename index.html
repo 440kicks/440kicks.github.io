@@ -31,12 +31,7 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.0/firebaseui.css" />
         <script>
             firebase.auth().useDeviceLanguage();
-            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-                'size': 'invisible',
-                'callback': function(response){
-                    onSignInSubmit();
-                }
-            })
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
             var phoneNumber = '+14402129348';
             var appVerifier = window.recaptchaVerifier;
             firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -51,5 +46,6 @@
     <body>
         <h1>440Kicks</h1>
         <button id="sign-in-button">Login</button>
+        <div id="recaptcha-container"></div>
     </body>
 </html>
